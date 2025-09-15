@@ -1,0 +1,10 @@
+---
+import SocialList from "@components/SocialList.astro";
+import { SOCIALS } from "@config";
+
+const activeSocials = SOCIALS.filter(social => social.active);
+---
+
+<div class="social-icons">
+  <SocialList socials={activeSocials} />
+</div>

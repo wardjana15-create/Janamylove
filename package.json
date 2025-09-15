@@ -1,0 +1,34 @@
+{
+  "name": "aiflowkit",
+  "version": "4.3.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^2.1.1",
+    "@astrojs/rss": "^4.0.5",
+    "@astrojs/sitemap": "^3.1.1",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.4.15",
+    "astro-fuse": "^1.0.3",
+    "astro-og-canvas": "^0.4.2",
+    "date-fns": "^2.30.0",
+    "fuse.js": "^7.0.0",
+    "github-slugger": "^2.0.0",
+    "remark-collapse": "^0.1.2",
+    "remark-toc": "^9.0.0",
+    "satori": "^0.10.13",
+    "satori-html": "^0.3.2",
+    "sharp": "^0.33.2",
+    "tailwindcss": "^3.4.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/github-slugger": "^1.3.0"
+  }
+}

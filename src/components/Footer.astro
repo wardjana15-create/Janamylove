@@ -1,0 +1,16 @@
+---
+import Socials from "@components/Socials.astro";
+import { SITE } from "@config";
+const { author } = SITE;
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer-wrapper">
+  <div class="copyright-wrapper">
+    <span>
+      Copyright &#169; {currentYear}
+      <a href="/" target="_blank" rel="noopener noreferrer">{author}</a>
+    </span>
+  </div>
+  <Socials />
+</footer>

@@ -1,10 +1,27 @@
 ---
-import SocialList from "@components/SocialList.astro";
 import { SOCIALS } from "@config";
+import { socialIcons } from "@assets/socialIcons";
 
 const activeSocials = SOCIALS.filter(social => social.active);
 ---
 
 <div class="social-icons">
-  <SocialList socials={activeSocials} />
+  {
+    activeSocials.map(social => (
+      <a
+        href={social.href}
+        aria-label={social.linkTitle}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class={`social-icon`}
+          viewBox="0 0 24 24"
+        >
+          <path d={socialIcons[social.name]} />
+        </svg>
+      </a>
+    ))
+  }
 </div>

@@ -15,10 +15,10 @@ export default defineConfig({
     sitemap(),
     mdx(),
     rss({
-  title: SITE.title,
-  description: SITE.desc,
-  site: SITE.website,
-}),
+      title: SITE.title,
+      description: SITE.desc,
+      site: SITE.website,
+    }),
   ],
   markdown: {
     remarkPlugins: [

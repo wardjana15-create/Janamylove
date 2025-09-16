@@ -1,0 +1,102 @@
+/* import tailwindcss styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --scroll-mt: 6rem; /* 96px */
+  }
+}
+
+@layer components {
+  /* Main content wrapper */
+  .main-wrapper {
+    @apply mx-auto mb-10 w-full max-w-3xl px-4;
+  }
+
+  /* Header */
+  .header-wrapper {
+    @apply main-wrapper sticky top-0 z-30 flex items-center justify-between bg-white py-5 dark:bg-black;
+  }
+  .header-logo {
+    @apply text-lg font-bold;
+  }
+  .logo-text {
+    @apply text-lg font-bold sm:text-xl;
+  }
+  .header-nav-wrapper {
+    @apply flex items-center text-base leading-5;
+  }
+
+  /* Heading underline animation */
+  .link-underline {
+    @apply relative decoration-gray-400 decoration-2 transition-all duration-300 dark:decoration-gray-600;
+  }
+  .link-underline:hover {
+    @apply underline;
+  }
+  .link-underline::after {
+    @apply absolute -bottom-1 left-0 hidden h-px w-full origin-left scale-x-0 transform bg-gray-400 transition-transform duration-300 content-[''] dark:bg-gray-600 sm:block;
+  }
+  .link-underline:hover::after {
+    @apply scale-x-100;
+  }
+
+  /* Footer */
+  .footer-wrapper {
+    @apply main-wrapper mt-auto flex flex-col items-center justify-between py-6 sm:flex-row;
+  }
+
+  /* Social Icons */
+  .social-icons {
+    @apply my-2 flex flex-wrap items-center justify-center space-x-4 sm:my-0;
+  }
+  .social-icon {
+    @apply h-6 w-6 fill-current text-gray-700 transition-colors duration-300 hover:text-black dark:text-gray-200 dark:hover:text-white sm:h-8 sm:w-8;
+  }
+
+  /* Theme toggle */
+  #theme-btn {
+    @apply rounded-full bg-gray-200 p-2 dark:bg-gray-700;
+  }
+  #theme-btn > svg {
+    @apply h-6 w-6 text-gray-800 dark:text-gray-200;
+  }
+  #theme-btn > .icon-moon {
+    @apply hidden;
+  }
+  #theme-btn > .icon-sun {
+    @apply block;
+  }
+  .dark #theme-btn > .icon-moon {
+    @apply block;
+  }
+  .dark #theme-btn > .icon-sun {
+    @apply hidden;
+  }
+
+  /* Blog post list */
+  .post-title {
+    @apply text-lg font-medium text-black underline-offset-4 dark:text-white md:text-xl;
+  }
+
+  /* Hr */
+  .astro-code > code {
+    @apply font-mono;
+  }
+  hr {
+    @apply my-4 w-full border-t border-dashed border-gray-300 dark:border-gray-700;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--scroll-mt);
+}
+body {
+  @apply bg-white text-black dark:bg-black dark:text-white;
+}
+main {
+  @apply main-wrapper;
+    }
